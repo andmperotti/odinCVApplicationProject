@@ -2,9 +2,9 @@ import { useState } from "react";
 import "../styles/index.css";
 
 export default function General() {
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState("edit");
 
-  if (status === false) {
+  if (status === "edit") {
     return (
       <>
         <h1>General Information: </h1>
@@ -35,7 +35,11 @@ export default function General() {
           <button id="add-skill" type="button">
             Add Another Skill
           </button>
-          <button id="submit-general" onSubmit={() => setStatus(true)}>
+          <button
+            id="submit-general"
+            onClick={() => setStatus("submit")}
+            type="button"
+          >
             Submit
           </button>
         </form>
@@ -45,7 +49,10 @@ export default function General() {
     return (
       <>
         <h1>Persons Name</h1>
-        <p></p>
+
+        <button onClick={() => setStatus("edit")} type="button">
+          Edit
+        </button>
       </>
     );
   }

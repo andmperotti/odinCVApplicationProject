@@ -1,0 +1,12 @@
+#education-output {
+  border: 1px solid gray;
+  display: grid;
+  justify-content: center;
+  margin-top: 1ch;
+}
+
+#education-edit-button {
+  width: fit-content;
+  text-align: center;
+  justify-self: center;
+}

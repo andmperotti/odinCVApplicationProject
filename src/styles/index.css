@@ -118,11 +118,8 @@ input {
   margin-top: 2ch;
 }
 .skills-output-ul {
-  display: flex;
-  background-color: red;
-  flex-wrap: wrap;
-  width: 100%;
-  /* justify-content: space-between; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .skill-li {
   width: fit-content;
@@ -132,6 +129,7 @@ input {
   text-align: center;
   justify-self: center;
 }
+
 /* media query to hide edit buttons when user prints screen */
 @media print {
   .edit-button {

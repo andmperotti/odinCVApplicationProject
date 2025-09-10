@@ -1,0 +1,9 @@
+.App {
+  margin: 1%;
+}
+/* media query to hide edit buttons when user prints screen */
+@media print {
+  .App #title {
+    display: none;
+  }
+}

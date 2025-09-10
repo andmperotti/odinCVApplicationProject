@@ -76,32 +76,44 @@ h6 {
 }
 
 /* my css */
+body {
+  margin: 1%;
+}
+#title {
+  text-align: center;
+}
+
 textarea {
   min-width: 250px;
   min-height: 150px;
 }
-
-.general-input {
-  display: grid;
-}
-
 #name-input-label,
 #email-input-label,
 #phone-input-label,
 #location-input-label,
 #professional-title-input-label,
+#description-input-label,
 #skills-input-label {
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 input {
   margin-left: 1ch;
 }
 
+#skills-input {
+  margin-right: 1ch;
+}
+.skills-disclaimer {
+  color: red;
+}
+
 .general-output {
   display: grid;
   justify-content: center;
   text-align: center;
+  border: 1px solid gray;
 }
 .title-output {
   font-weight: bold;
@@ -137,5 +149,8 @@ input {
   }
   #title {
     display: none;
+  }
+  .general-output {
+    border: none;
   }
 }

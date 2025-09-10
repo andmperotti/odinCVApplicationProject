@@ -1,7 +1,6 @@
-import { useState } from "react";
 import "../styles/EducationInput.css";
 
-function EducationInput() {
+function EducationInput({ person, setPerson }) {
   return (
     <div class="education-input-instance">
       <label class="institution-input-label">

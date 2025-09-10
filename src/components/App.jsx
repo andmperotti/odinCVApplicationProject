@@ -13,6 +13,7 @@ function App() {
     title: "",
     description: "",
     skills: [],
+    education: [],
   });
 
   return (

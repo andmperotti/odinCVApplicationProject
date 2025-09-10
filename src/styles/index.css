@@ -97,3 +97,47 @@ textarea {
 input {
   margin-left: 1ch;
 }
+
+.general-output {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.title-output {
+  font-weight: bold;
+}
+.phone-keyword,
+.email-keyword {
+  font-weight: bold;
+}
+.person-description-output {
+  font-size: 1.2rem;
+}
+.description-output-title,
+.skills-output-title {
+  margin-top: 2ch;
+}
+.skills-output-ul {
+  display: flex;
+  background-color: red;
+  flex-wrap: wrap;
+  width: 100%;
+  /* justify-content: space-between; */
+}
+.skill-li {
+  width: fit-content;
+}
+.edit-button {
+  width: fit-content;
+  text-align: center;
+  justify-self: center;
+}
+/* media query to hide edit buttons when user prints screen */
+@media print {
+  .edit-button {
+    display: none;
+  }
+  #title {
+    display: none;
+  }
+}

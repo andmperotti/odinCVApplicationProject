@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/Education.css";
 import { EducationInput } from "./EducationInput";
 
-export default function Education() {
+export default function Education({ person, setPerson }) {
   const [status, setStatus] = useState("edit");
 
   if (status === "edit") {
@@ -11,7 +11,8 @@ export default function Education() {
     return (
       <div id="education-input">
         <h1>Education:</h1>
-        <EducationInput />
+        <EducationInput person={person} setPerson={setPerson} />
+
         <button
           id="add-education-component"
           //add onClick method to generate another Educationinput component, guessing it would add object to person.education array with empty values
@@ -26,12 +27,20 @@ export default function Education() {
   } else {
     return (
       <div id="education-output">
-        {/* //if education.person.length>0: */}
-        <h1>Education</h1>
-        {/* //generate output for each object in array */}
-        {/* //name of school/course  */}
-        {/* //title of degree/course taken  */}
-        {/* //dates attended/studied */}
+        {person.education.length > 0 && <h1>Education</h1>}
+        <ul>
+          {person.education.map((education) => (
+            <li>
+              <h3 class="education-name-output">{/*Education name*/}</h3>
+              <span class="education-dates-studied">
+                {/*Dates Attended/Studied Start - End*/}
+              </span>
+              <p class="education-degree-title-output">
+                {/*Degree/Course Title*/}
+              </p>
+            </li>
+          ))}
+        </ul>
         <button onClick={() => setStatus("edit")} id="education-edit-button">
           Edit
         </button>

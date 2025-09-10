@@ -1,17 +1,27 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "../styles/App.css";
 import General from "./General.jsx";
 import Education from "./Education.jsx";
 import Professional from "./Professional.jsx";
 
 function App() {
+  const [person, setPerson] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    title: "",
+    description: "",
+    skills: [],
+  });
+
   return (
-    <>
-      <h1>CV Builder</h1>
-      <General />
-      <Education />
-      <Professional />
-    </>
+    <div class="App">
+      <h1 id="title">CV Builder</h1>
+      <General person={person} setPerson={setPerson} />
+      <Education person={person} setPerson={setPerson} />
+      <Professional person={person} setPerson={setPerson} />
+    </div>
   );
 }
 

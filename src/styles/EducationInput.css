@@ -1,0 +1,12 @@
+.education-input-instance {
+  display: grid;
+}
+
+.institution-input-label,
+.degree-input-label,
+.start-date-input-label,
+.end-date-input-label {
+  display: flex;
+  align-items: center;
+  margin-top: 1ch;
+}

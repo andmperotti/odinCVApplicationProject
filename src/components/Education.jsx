@@ -27,12 +27,14 @@ export default function Education() {
     return (
       <div id="education-output">
         {/* //if education.person.length>0: */}
-        <h1>Education:</h1>
+        <h1>Education</h1>
         {/* //generate output for each object in array */}
         {/* //name of school/course  */}
         {/* //title of degree/course taken  */}
         {/* //dates attended/studied */}
-        <button onClick={() => setStatus("edit")}>Edit</button>
+        <button onClick={() => setStatus("edit")} id="education-edit-button">
+          Edit
+        </button>
       </div>
     );
   }

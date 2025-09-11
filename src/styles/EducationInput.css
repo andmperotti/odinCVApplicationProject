@@ -10,3 +10,12 @@
   align-items: center;
   margin-top: 1ch;
 }
+
+.education-input-instance input {
+  margin-left: 1ch;
+}
+
+.end-date-input-label {
+  margin-bottom: 1ch;
+}
+

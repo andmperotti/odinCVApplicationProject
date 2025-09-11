@@ -11,33 +11,69 @@ export default function Education({ person, setPerson }) {
     return (
       <div id="education-input">
         <h1>Education:</h1>
-        <EducationInput person={person} setPerson={setPerson} />
+
+        {/* render first education element, which exists by default*/}
+        {
+          <EducationInput
+            person={person}
+            setPerson={setPerson}
+            key={0}
+            index={0}
+          />
+        }
+
+        {/* render the rest of the education objects if the length is greater than 1, which happens when the "add another education" button is clicked and updates state*/}
+        {person.education.length > 1 &&
+          person.education
+            .slice(1)
+            .map((element, index) => (
+              <EducationInput
+                person={person}
+                setPerson={setPerson}
+                key={index}
+                index={index}
+              />
+            ))}
 
         <button
-          id="add-education-component"
-          //add onClick method to generate another Educationinput component, guessing it would add object to person.education array with empty values
+          id="add-education-button"
+          onClick={() => {
+            let newPerson = { ...person };
+            newPerson.education.push({
+              institutionName: "",
+              courseTitle: "",
+              startDate: "",
+              endDate: "",
+            });
+            setPerson(newPerson);
+          }}
         >
           Add Another
         </button>
         <button onClick={() => setStatus("submit")}>Submit</button>
-        {/* maybe check for inputs when submit is clicked so handfuls of empty
-        education objects aren't added? */}
       </div>
     );
   } else {
     return (
       <div id="education-output">
-        {person.education.length > 0 && <h1>Education</h1>}
-        <ul>
-          {person.education.map((education) => (
-            <li>
-              <h3 class="education-name-output">{/*Education name*/}</h3>
-              <span class="education-dates-studied">
-                {/*Dates Attended/Studied Start - End*/}
-              </span>
-              <p class="education-degree-title-output">
-                {/*Degree/Course Title*/}
-              </p>
+        {person.education.length > 0 &&
+          person.education[0].institutionName.length > 0 && <h1>Education</h1>}
+        <ul className="education-list">
+          {person.education.map((education, index) => (
+            <li className="education-items" key={index}>
+              <section className="institution-info">
+                <h3 className="education-name-output">
+                  {education.institutionName}
+                </h3>
+                <span className="education-dates-studied">
+                  {education.startDate.slice(5, 7)}/
+                  {education.startDate.slice(9)}/
+                  {education.startDate.slice(0, 4)} to{" "}
+                  {education.endDate.slice(5, 7)}/{education.endDate.slice(9)}/
+                  {education.endDate.slice(0, 4)}
+                </span>
+              </section>
+              <p className="education-title">{education.courseTitle}</p>
             </li>
           ))}
         </ul>

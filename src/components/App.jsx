@@ -13,7 +13,9 @@ function App() {
     title: "",
     description: "",
     skills: [],
-    education: [{}],
+    education: [
+      { institutionName: "", courseTitle: "", startDate: "", endDate: "" },
+    ],
   });
 
   return (

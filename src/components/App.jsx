@@ -5,7 +5,16 @@ import Education from "./Education.jsx";
 import Professional from "./Professional.jsx";
 
 function App() {
-  const [person, setPerson] = useState({});
+  const [person, setPerson] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    title: "",
+    description: "",
+    skills: [],
+    education: [{}],
+  });
 
   return (
     <div className="App">

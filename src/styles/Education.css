@@ -1,8 +1,34 @@
 #education-output {
   border: 1px solid gray;
   display: grid;
-  justify-content: center;
   margin-top: 1ch;
+  text-align: center;
+}
+
+/*ul*/
+.education-list {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/*li*/
+.education-items {
+  width: 80%;
+  display: grid;
+  margin: 1ch 5% 0 5%;
+  padding: 0;
+}
+
+/*holds institution name and dates*/
+.institution-info {
+  display: flex;
+  justify-content: space-between;
+}
+/*holds just the name/title of degree/course*/
+.education-title {
+  text-align: left;
 }
 
 #education-edit-button {

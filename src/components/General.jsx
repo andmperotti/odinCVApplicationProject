@@ -89,7 +89,7 @@ export default function General({ person, setPerson }) {
                 setPerson({ ...person, skills: event.target.value.split(", ") })
               }
             />
-            <span class="skills-disclaimer">
+            <span className="skills-disclaimer">
               Please comma space separate entries (ex: strong communication,
               critical thinking, teamwork, adaptability)
             </span>

@@ -5,19 +5,10 @@ import Education from "./Education.jsx";
 import Professional from "./Professional.jsx";
 
 function App() {
-  const [person, setPerson] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    location: "",
-    title: "",
-    description: "",
-    skills: [],
-    education: [],
-  });
+  const [person, setPerson] = useState({});
 
   return (
-    <div class="App">
+    <div className="App">
       <h1 id="title">CV Builder</h1>
       <General person={person} setPerson={setPerson} />
       <Education person={person} setPerson={setPerson} />

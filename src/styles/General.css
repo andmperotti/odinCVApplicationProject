@@ -23,11 +23,18 @@
   width: 250px;
 }
 
+.general-input input:user-invalid {
+  outline: 1px solid red;
+}
+
 #skills-input {
   margin-right: 1ch;
 }
-.skills-disclaimer {
+
+.required-asterisk {
   color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .general-output {

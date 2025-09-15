@@ -51,3 +51,15 @@
   color: red;
   margin: 1ch 0;
 }
+
+@media print {
+  #education-output {
+    border: none;
+  }
+  #education-edit-button {
+    display: none;
+  }
+  .no-education {
+    display: none;
+  }
+}

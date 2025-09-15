@@ -40,3 +40,7 @@
 #add-education-button {
   margin-top: 1ch;
 }
+
+#education-input hr {
+  margin: 1ch 0;
+}

@@ -20,3 +20,7 @@
 .end-date-input-label {
   margin-bottom: 1ch;
 }
+
+.delete-education-button {
+  width: fit-content;
+}

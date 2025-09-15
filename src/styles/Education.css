@@ -43,5 +43,5 @@
 
 #education-input hr {
   margin: 1ch 0;
-  width: 410px;
+  max-width: 410px;
 }

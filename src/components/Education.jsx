@@ -32,7 +32,7 @@ export default function Education({ person, setPerson }) {
               />
             </>
           ))}
-
+        <hr></hr>
         <button
           id="add-education-button"
           //Limit new educations to ten

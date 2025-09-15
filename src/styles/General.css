@@ -16,6 +16,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 1ch;
+  max-width: 400px;
+  justify-content: space-between;
 }
 
 .general-input input {

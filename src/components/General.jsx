@@ -1,4 +1,4 @@
-import { Children, createElement, useState } from "react";
+import { Children, useState } from "react";
 import "../styles/General.css";
 
 export default function General({ person, setPerson }) {
@@ -42,7 +42,9 @@ export default function General({ person, setPerson }) {
             field
           </p>
           <label id="name-input-label">
-            Name<span className="required-asterisk">*</span>:
+            <span>
+              Name<span className="required-asterisk">*</span>:
+            </span>
             <input
               type="text"
               value={person.name}
@@ -60,7 +62,9 @@ export default function General({ person, setPerson }) {
             />
           </label>
           <label id="email-input-label">
-            Email<span className="required-asterisk">*</span>:
+            <span>
+              Email<span className="required-asterisk">*</span>:
+            </span>
             <input
               type="email"
               value={person.email}
@@ -79,7 +83,9 @@ export default function General({ person, setPerson }) {
             />
           </label>
           <label id="phone-input-label">
-            Phone<span className="required-asterisk">*</span>:
+            <span>
+              Phone<span className="required-asterisk">*</span>:
+            </span>
             <input
               type="text"
               value={person.phone}
@@ -98,7 +104,9 @@ export default function General({ person, setPerson }) {
             />
           </label>
           <label id="location-input-label">
-            Location<span className="required-asterisk">*</span>:
+            <span>
+              Location<span className="required-asterisk">*</span>:
+            </span>
             <input
               type="text"
               value={person.location}

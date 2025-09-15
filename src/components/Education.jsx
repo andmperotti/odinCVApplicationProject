@@ -12,17 +12,20 @@ export default function Education({ person, setPerson }) {
 
       <div id="education-input">
         <h1>Education:</h1>
-        {
-          <EducationInput
-            person={person}
-            setPerson={setPerson}
-            key={0}
-            index={0}
-          />
-        }
+        {person.education.length === 0 && <p>No education objects created</p>}
+        {person.education.length === 1 && (
+          <div key={0}>
+            <EducationInput
+              person={person}
+              setPerson={setPerson}
+              key={0}
+              index={0}
+            />
+          </div>
+        )}
         {person.education.length > 1 &&
           person.education.slice(1).map((element, index) => (
-            <>
+            <div key={index + 1}>
               <hr></hr>
               <EducationInput
                 person={person}
@@ -30,7 +33,7 @@ export default function Education({ person, setPerson }) {
                 key={index + 1}
                 index={index + 1}
               />
-            </>
+            </div>
           ))}
         <hr></hr>
         <button
@@ -93,7 +96,12 @@ export default function Education({ person, setPerson }) {
   } else {
     return (
       <div id="education-output">
-        {person.education.length > 0 && <h1>Education</h1>}
+        {person.education.length === 0 && (
+          <h1 className="no-education">Education</h1>
+        )}
+        {person.education.length > 0 && (
+          <h1 className="has-education">Education</h1>
+        )}
         <ul className="education-list">
           {person.education.map((education, index) => (
             <li className="education-items" key={index}>

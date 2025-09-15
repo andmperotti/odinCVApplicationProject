@@ -23,10 +23,6 @@
   width: 250px;
 }
 
-.general-input input:user-invalid {
-  outline: 1px solid red;
-}
-
 #skills-input {
   margin-right: 1ch;
 }
@@ -45,6 +41,7 @@
 }
 .title-output {
   font-weight: bold;
+  font-size: 1.2rem;
 }
 .phone-keyword,
 .email-keyword {
@@ -68,6 +65,10 @@
   width: fit-content;
   text-align: center;
   justify-self: center;
+}
+.error-message {
+  display: block;
+  color: red;
 }
 
 /* media query to hide edit buttons when user prints screen */

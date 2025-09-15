@@ -102,27 +102,28 @@ export default function Education({ person, setPerson }) {
         {person.education.length > 0 && (
           <h1 className="has-education">Education</h1>
         )}
-        <ul className="education-list">
-          {person.education.map((education, index) => (
-            <li className="education-items" key={index}>
-              <section className="institution-info">
-                <h3 className="education-name-output">
-                  {education.institutionName}
-                </h3>
-                <span className="education-dates-studied">
-                  {education.startDate.slice(5, 7)}/
-                  {education.startDate.slice(9)}/
-                  {education.startDate.slice(0, 4)} to{" "}
-                  {education.endDate
-                    ? `${education.endDate.slice(5, 7)}/${education.endDate.slice(9)}/
-                  ${education.endDate.slice(0, 4)}`
-                    : "Present"}
-                </span>
-              </section>
-              <p className="education-title">{education.courseTitle}</p>
-            </li>
-          ))}
-        </ul>
+        {person.education.length > 0 && (
+          <ul className="education-list">
+            {person.education.map((education, index) => (
+              <li className="education-items" key={index}>
+                <section className="institution-info">
+                  <h3 className="education-name-output">
+                    {education.institutionName}
+                  </h3>
+                  <span className="education-dates-studied">
+                    {education.startDate.split("-")[1]}/
+                    {education.startDate.split("-")[2]}/
+                    {education.startDate.split("-")[0]} to{" "}
+                    {education.endDate
+                      ? `${education.endDate.split("-")[1]}/${education.endDate.split("-")[2]}/${education.endDate.split("-")[0]}`
+                      : "Present"}
+                  </span>
+                </section>
+                <p className="education-title">{education.courseTitle}</p>
+              </li>
+            ))}
+          </ul>
+        )}
         <button onClick={() => setStatus("edit")} id="education-edit-button">
           Edit
         </button>

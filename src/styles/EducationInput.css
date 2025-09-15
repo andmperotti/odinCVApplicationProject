@@ -9,6 +9,8 @@
   display: flex;
   align-items: center;
   margin-top: 1ch;
+  justify-content: space-between;
+  max-width: 400px;
 }
 
 .education-input-instance input {
@@ -18,4 +20,3 @@
 .end-date-input-label {
   margin-bottom: 1ch;
 }
-

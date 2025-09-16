@@ -14,7 +14,7 @@ export default function Education({ person, setPerson }) {
       <div id="education-input">
         <h1>Education:</h1>
         {person.education.length === 0 && <p>No education objects created</p>}
-        {person.education.length === 1 && (
+        {person.education.length > 0 && (
           <div key={0}>
             <EducationInput person={person} setPerson={setPerson} index={0} />
           </div>
@@ -61,7 +61,6 @@ export default function Education({ person, setPerson }) {
         >
           Add Another Education
         </button>
-
         <button
           id="submit-education-button"
           onClick={() => verifyInputs("education", setStatus)}

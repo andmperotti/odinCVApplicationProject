@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/Education.css";
 import { EducationInput } from "./EducationInput";
+import { verifyInputs } from "../assets/functions";
 
 export default function Education({ person, setPerson }) {
   const [status, setStatus] = useState("edit");
@@ -15,12 +16,7 @@ export default function Education({ person, setPerson }) {
         {person.education.length === 0 && <p>No education objects created</p>}
         {person.education.length === 1 && (
           <div key={0}>
-            <EducationInput
-              person={person}
-              setPerson={setPerson}
-              key={0}
-              index={0}
-            />
+            <EducationInput person={person} setPerson={setPerson} index={0} />
           </div>
         )}
         {person.education.length > 1 &&
@@ -30,7 +26,6 @@ export default function Education({ person, setPerson }) {
               <EducationInput
                 person={person}
                 setPerson={setPerson}
-                key={index + 1}
                 index={index + 1}
               />
             </div>
@@ -68,26 +63,8 @@ export default function Education({ person, setPerson }) {
         </button>
 
         <button
-          onClick={() => {
-            //if required input fields data are acceptable, then change status
-            let educationInputFields = Array.from(
-              document.querySelectorAll(".education-input-instance input"),
-            );
-            if (
-              educationInputFields.every(
-                (input) => input.checkValidity() === true,
-              )
-            ) {
-              setStatus("submit");
-            } else {
-              //otherwise tell the user there are problems with their input above
-              educationInputFields.filter((inputEle) =>
-                inputEle.checkValidity() === false
-                  ? (inputEle.style.outline = "1px solid red")
-                  : null,
-              );
-            }
-          }}
+          id="submit-education-button"
+          onClick={() => verifyInputs("education", setStatus)}
         >
           Submit
         </button>

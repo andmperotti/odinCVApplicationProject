@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.general-input textarea {
+#general-input textarea {
   min-width: 250px;
   min-height: 150px;
 }
@@ -20,7 +20,7 @@
   justify-content: space-between;
 }
 
-.general-input input {
+#general-input input {
   margin-left: 1ch;
   width: 250px;
 }
@@ -35,7 +35,7 @@
   font-size: 1.5rem;
 }
 
-.general-output {
+#general-output {
   display: grid;
   justify-content: center;
   text-align: center;
@@ -78,7 +78,7 @@
   .edit-button {
     display: none;
   }
-  .general-output {
+  #general-output {
     border: none;
   }
 }

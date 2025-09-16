@@ -1,12 +1,10 @@
 import "../styles/EducationInput.css";
+import {
+  changeArrayObjectValue,
+  validityChecker,
+} from "../assets/functions.js";
 
 function EducationInput({ person, setPerson, index }) {
-  function addOrChangeEducation(property, value) {
-    let newPerson = { ...person };
-    newPerson.education[index][property] = value;
-    setPerson(newPerson);
-  }
-
   return (
     <div className="education-input-instance">
       <form action="">
@@ -21,9 +19,24 @@ function EducationInput({ person, setPerson, index }) {
           <input
             value={person.education[index].institutionName}
             required
-            onChange={(event) =>
-              addOrChangeEducation("institutionName", event.target.value)
-            }
+            id={`education-institution-name-input-${index}`}
+            onChange={(event) => {
+              changeArrayObjectValue(
+                "education",
+                "institutionName",
+                event.target.value,
+                person,
+                setPerson,
+                index,
+              );
+              validityChecker(
+                document.querySelector(
+                  `#education-institution-name-input-${index}`,
+                ),
+                "You need to enter text",
+                `education-institution-input-error-${index}`,
+              );
+            }}
           />
         </label>
 
@@ -33,10 +46,25 @@ function EducationInput({ person, setPerson, index }) {
           </span>
           <input
             value={person.education[index].courseTitle}
+            id={`education-course-title-input-${index}`}
             required
-            onChange={(event) =>
-              addOrChangeEducation("courseTitle", event.target.value)
-            }
+            onChange={(event) => {
+              changeArrayObjectValue(
+                "education",
+                "courseTitle",
+                event.target.value,
+                person,
+                setPerson,
+                index,
+              );
+              validityChecker(
+                document.querySelector(
+                  `#education-course-title-input-${index}`,
+                ),
+                "You need to enter text",
+                `education-course-title-input-error-${index}`,
+              );
+            }}
             type="string"
           />
         </label>
@@ -48,11 +76,25 @@ function EducationInput({ person, setPerson, index }) {
           </span>
           <input
             type="date"
+            id={`education-start-date-input-${index}`}
             required
             value={person.education[index].startDate}
-            onChange={(event) =>
-              addOrChangeEducation("startDate", event.target.value)
-            }
+            pattern="\d{1,2}\/\d{1,2}\/\d{1,4}"
+            onChange={(event) => {
+              changeArrayObjectValue(
+                "education",
+                "startDate",
+                event.target.value,
+                person,
+                setPerson,
+                index,
+              );
+              validityChecker(
+                document.querySelector(`#education-start-date-input-${index}`),
+                "You need to enter a start date",
+                `education-start-date-input-error-${index}`,
+              );
+            }}
           />
         </label>
 
@@ -62,7 +104,14 @@ function EducationInput({ person, setPerson, index }) {
             type="date"
             value={person.education[index].endDate}
             onChange={(event) =>
-              addOrChangeEducation("endDate", event.target.value)
+              changeArrayObjectValue(
+                "education",
+                "endDate",
+                event.target.value,
+                person,
+                setPerson,
+                index,
+              )
             }
           />
         </label>

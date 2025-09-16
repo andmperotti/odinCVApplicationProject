@@ -1,40 +1,13 @@
 import { Children, useState } from "react";
 import "../styles/General.css";
+import { saveInput, validityChecker, verifyInputs } from "../assets/functions";
 
 export default function General({ person, setPerson }) {
   const [status, setStatus] = useState("edit");
 
-  function validityChecker(
-    event,
-    inputElement,
-    property,
-    errorMessage,
-    errorMessageId,
-  ) {
-    //save input
-    let newPerson = { ...person };
-    newPerson[property] = event.target.value;
-    setPerson({ ...newPerson });
-    //check if specific error message is active, if so delete
-    if (document.querySelector(`#${errorMessageId}`)) {
-      document.querySelector(`#${errorMessageId}`).remove();
-    }
-    //check if input is valid, remove styling
-    if (inputElement.checkValidity() === true) {
-      inputElement.style.outline = "none";
-    } else {
-      inputElement.style.outline = "1px solid red";
-      let errorSpan = document.createElement("span");
-      errorSpan.textContent = errorMessage;
-      errorSpan.id = errorMessageId;
-      errorSpan.className = "error-message";
-      inputElement.parentNode.after(errorSpan);
-    }
-  }
-
   if (status === "edit") {
     return (
-      <div className="general-input">
+      <div id="general-input">
         <h1>General Information: </h1>
         <form action="">
           <p>
@@ -48,15 +21,14 @@ export default function General({ person, setPerson }) {
             <input
               type="text"
               value={person.name}
-              onChange={(event) =>
+              onChange={(event) => {
+                saveInput(event, "name", person, setPerson);
                 validityChecker(
-                  event,
                   document.querySelector("#name-input-label input"),
-                  "name",
                   "Field requires text",
                   "general-name-input-error",
-                )
-              }
+                );
+              }}
               placeholder="ex: Chris Toms"
               required
             />
@@ -68,15 +40,14 @@ export default function General({ person, setPerson }) {
             <input
               type="email"
               value={person.email}
-              onChange={(event) =>
+              onChange={(event) => {
+                saveInput(event, "email", person, setPerson);
                 validityChecker(
-                  event,
                   document.querySelector("#email-input-label input"),
-                  "email",
                   "Field requires valid email address",
                   "general-email-input-error",
-                )
-              }
+                );
+              }}
               placeholder="ex: chrisT@test.com"
               required
               pattern="\w+@{1}[a-zA-Z]+[.][a-zA-Z]+"
@@ -89,15 +60,14 @@ export default function General({ person, setPerson }) {
             <input
               type="text"
               value={person.phone}
-              onChange={(event) =>
+              onChange={(event) => {
+                saveInput(event, "phone", person, setPerson);
                 validityChecker(
-                  event,
                   document.querySelector("#phone-input-label input"),
-                  "phone",
                   "Field requires 10 digits",
                   "general-phone-input-error",
-                )
-              }
+                );
+              }}
               placeholder="ex: 1234567890"
               required
               pattern="\d{10}"
@@ -110,15 +80,14 @@ export default function General({ person, setPerson }) {
             <input
               type="text"
               value={person.location}
-              onChange={(event) =>
+              onChange={(event) => {
+                saveInput(event, "location", person, setPerson);
                 validityChecker(
-                  event,
                   document.querySelector("#location-input-label input"),
-                  "location",
                   "Field requires text entry",
                   "general-location-input-error",
-                )
-              }
+                );
+              }}
               placeholder="city, state"
               required
             />
@@ -158,36 +127,8 @@ export default function General({ person, setPerson }) {
             />
           </label>
           <button
-            id="submit-general"
-            onClick={() => {
-              //if submit button error message shown then delete it
-              if (document.querySelector("#submit-button-error")) {
-                document.querySelector("#submit-button-error").remove();
-              }
-
-              //apply outline color if required input fields are invalid
-              let invalidInputs = document.querySelectorAll(
-                "input[required]:invalid",
-              );
-              invalidInputs.forEach(
-                (input) => (input.style.outline = "1px solid red"),
-              );
-
-              //checks if any required inputs are invalid/blank and displays error message if so
-              if (invalidInputs.length === 0) {
-                setStatus("submit");
-              } else {
-                //add error message below span, but somehow limit the number of them, and take them away when the button is pressed again
-                let submitErrorMessageSpan = document.createElement("span");
-                submitErrorMessageSpan.className = "error-message";
-                submitErrorMessageSpan.id = "submit-button-error";
-                submitErrorMessageSpan.textContent =
-                  "There are invalid or missing input in the fields above, please input entry into fields, and follow any error prompts  that follow your entry";
-                document
-                  .querySelector("#submit-general")
-                  .after(submitErrorMessageSpan);
-              }
-            }}
+            id="submit-general-button"
+            onClick={() => verifyInputs("general", setStatus)}
             type="button"
           >
             Submit
@@ -197,7 +138,7 @@ export default function General({ person, setPerson }) {
     );
   } else {
     return (
-      <div className="general-output">
+      <div id="general-output">
         {person.name.length > 0 && (
           <h1 className="name-output">{person.name}</h1>
         )}

@@ -16,6 +16,15 @@ function App() {
     education: [
       { institutionName: "", courseTitle: "", startDate: "", endDate: "" },
     ],
+    professional: [
+      {
+        companyName: "",
+        positionHeld: "",
+        startDate: "",
+        endDate: "",
+        responsibilities: [""],
+      },
+    ],
   });
 
   return (

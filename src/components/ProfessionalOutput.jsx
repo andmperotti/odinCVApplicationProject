@@ -19,7 +19,7 @@ export function ProfessionalOutput({ person, index }) {
           person.professional[index].responsibilities.map(
             (responsibility, responsibilityIndex) => (
               <li
-                key={index}
+                key={`${index}-${responsibilityIndex}`}
                 id={`professional-output-${index}-responsibility-${responsibilityIndex}`}
               >
                 {responsibility}
@@ -30,3 +30,5 @@ export function ProfessionalOutput({ person, index }) {
     </section>
   );
 }
+
+//elements are missing classes/ids and styling in the style file

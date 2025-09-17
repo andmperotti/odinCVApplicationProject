@@ -63,4 +63,24 @@ function verifyInputs(section, setStatus) {
   }
 }
 
-export { changeArrayObjectValue, validityChecker, saveInput, verifyInputs };
+function changeResponsibility(
+  professionIndex,
+  responsibilityIndex,
+  newValue,
+  person,
+  setPerson,
+) {
+  let newPerson = { ...person };
+  newPerson.professional[professionIndex].responsibilities[
+    responsibilityIndex
+  ] = newValue;
+  setPerson(newPerson);
+}
+
+export {
+  changeArrayObjectValue,
+  validityChecker,
+  saveInput,
+  verifyInputs,
+  changeResponsibility,
+};

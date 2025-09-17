@@ -36,6 +36,10 @@ export default function Professional({ person, setPerson }) {
     }
   } else {
     //submit mode
-    
+    // if person has profession objects, render their values
+    {
+      person.professional.length > 0 && <h2>Professional Experience:</h2>;
+    }
+    // {person.professional.length > 0 && person.professional.map((profession, index)=>
   }
 }

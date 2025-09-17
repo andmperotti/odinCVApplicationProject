@@ -79,7 +79,6 @@ function EducationInput({ person, setPerson, index }) {
             id={`education-start-date-input-${index}`}
             required
             value={person.education[index].startDate}
-            pattern="\d{1,2}\/\d{1,2}\/\d{1,4}"
             onChange={(event) => {
               changeArrayObjectValue(
                 "education",

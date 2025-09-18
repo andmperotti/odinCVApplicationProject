@@ -1,12 +1,12 @@
 #education-output {
   border: 1px solid gray;
   display: grid;
-  margin-top: 1ch;
+  margin-top: 2ch;
   text-align: center;
 }
 
 /*ul*/
-.education-list {
+.educations-container {
   list-style: none;
   display: block;
   padding: 0;
@@ -14,11 +14,11 @@
 }
 
 /*li*/
-.education-items {
-  width: 80%;
-  display: grid;
+.education-item {
   margin: 1ch 5% 0 5%;
-  padding: 0;
+  width: 90%;
+  display: grid;
+  justify-self: center;
 }
 
 /*holds institution name and dates*/
@@ -29,16 +29,17 @@
 /*holds just the name/title of degree/course*/
 .education-title {
   text-align: left;
+  font-style: italic;
 }
 
 #education-edit-button {
   width: fit-content;
-  text-align: center;
   justify-self: center;
 }
 
 #add-education-button {
   margin-top: 1ch;
+  display: block;
 }
 
 #education-input hr {

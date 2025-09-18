@@ -126,6 +126,9 @@ export default function General({ person, setPerson }) {
               placeholder="Comma space entries; ex: a, b, c"
             />
           </label>
+
+          {/* button to add SkillInput instance */}
+
           <button
             id="submit-general-button"
             onClick={() => verifyInputs("general", setStatus)}
@@ -143,7 +146,7 @@ export default function General({ person, setPerson }) {
           <h1 className="name-output">{person.name}</h1>
         )}
         {person.title.length > 0 && (
-          <p className="title-output">{person.title}</p>
+          <h3 className="title-output">{person.title}</h3>
         )}
         {(person.email.length > 0 || person.phone.length > 0) && (
           <div className="phone-email-output">
@@ -170,7 +173,7 @@ export default function General({ person, setPerson }) {
         {person.description.length > 0 ? (
           <>
             <h2 className="description-output-title">Description: </h2>
-            <p className="person-description-output">{person.description}</p>
+            <p>{person.description}</p>
           </>
         ) : null}
         {person.skills.length > 0 ? (

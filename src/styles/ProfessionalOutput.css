@@ -38,6 +38,8 @@
 
 #professional-output ul {
   padding: 0;
+  display: grid;
+  text-align: start;
 }
 
 .date-to {

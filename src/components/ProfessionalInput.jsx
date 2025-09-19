@@ -13,7 +13,7 @@ function ProfessionalInput({ person, setPerson, index }) {
       id={`professional-input-${index}`}
       className="professional-input-instance"
     >
-      <form class="professional-input-instance-form">
+      <form className="professional-input-instance-form">
         <span>
           <label>
             <span>

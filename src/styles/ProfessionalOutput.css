@@ -1,0 +1,59 @@
+#professional-output {
+  border: 1px solid gray;
+  display: grid;
+  margin-top: 2ch;
+  text-align: center;
+}
+
+.professional-item {
+  margin: 1ch 5% 0 5%;
+  width: 90%;
+  display: grid;
+  justify-self: center;
+}
+
+.professional-name-date-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.professional-position {
+  font-style: italic;
+  text-align: start;
+}
+
+.professional-responsibilities-heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+.professional-responsibilities-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.professional-responsibilities-list li {
+  /* list-style-type: none; */
+}
+
+#professional-output ul {
+  padding: 0;
+}
+
+.date-to {
+  font-style: italic;
+  color: gray;
+  font-weight: bold;
+}
+
+@media print {
+  #professional-output {
+    border: none;
+  }
+  #professional-edit-button {
+    display: none;
+  }
+  .no-profession {
+    display: none;
+  }
+}

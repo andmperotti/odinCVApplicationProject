@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/Education.css";
 import { EducationInput } from "./EducationInput";
-import { verifyInputs } from "../assets/functions";
+import { verifyInputs, addEducation } from "../assets/functions";
 
 export default function Education({ person, setPerson }) {
   const [status, setStatus] = useState("edit");
@@ -14,50 +14,21 @@ export default function Education({ person, setPerson }) {
       <div id="education-input">
         <h1>Education:</h1>
         {person.education.length === 0 && <p>No education objects created</p>}
-        {person.education.length > 0 && (
-          <div key={0}>
-            <EducationInput person={person} setPerson={setPerson} index={0} />
-          </div>
-        )}
-        {person.education.length > 1 &&
-          person.education.slice(1).map((element, index) => (
-            <div key={index + 1}>
-              <hr></hr>
+
+        {person.education.length > 0 &&
+          person.education.map((element, index) => (
+            <div key={index}>
               <EducationInput
                 person={person}
                 setPerson={setPerson}
-                index={index + 1}
+                index={index}
               />
+              <hr></hr>
             </div>
           ))}
-        <hr></hr>
         <button
           id="add-education-button"
-          //Limit new educations to ten
-          onClick={() => {
-            if (person.education.length < 10) {
-              let newPerson = { ...person };
-              newPerson.education.push({
-                institutionName: "",
-                courseTitle: "",
-                startDate: "",
-                endDate: "",
-              });
-              setPerson(newPerson);
-            } else {
-              //tell the user that there are only ten educations allowed
-              let educationLimitError = document.createElement("span");
-              educationLimitError.id = "education-limit-error-message";
-              educationLimitError.textContent =
-                "You cannot have more than ten education objects";
-              document
-                .querySelector("#add-education-button")
-                .after(educationLimitError);
-              setTimeout(() => {
-                educationLimitError.remove();
-              }, 5000);
-            }
-          }}
+          onClick={() => addEducation(person, setPerson)}
         >
           Add Another Education
         </button>

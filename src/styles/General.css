@@ -43,15 +43,13 @@
 }
 .title-output {
   font-weight: bold;
-  font-size: 1.2rem;
 }
+
 .phone-keyword,
 .email-keyword {
   font-weight: bold;
 }
-.person-description-output {
-  font-size: 1.2rem;
-}
+
 .description-output-title,
 .skills-output-title {
   margin-top: 2ch;

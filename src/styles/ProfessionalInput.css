@@ -1,0 +1,31 @@
+section[id^="professional-input"] .add-responsibility-button {
+  display: block;
+}
+
+.professional-input-instance-form {
+  display: grid;
+}
+
+.add-responsibility-button,
+.delete-professional-experience-button {
+  width: fit-content;
+}
+
+.professional-input {
+  margin-bottom: 2ch;
+  width: fit-content;
+}
+
+.professional-instance-hr {
+  margin: 1ch 0;
+}
+
+.professional-input label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1ch;
+}
+
+.professional-input input {
+  width: 250px;
+}

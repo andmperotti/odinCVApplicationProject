@@ -77,10 +77,46 @@ function changeResponsibility(
   setPerson(newPerson);
 }
 
+function deleteResponsibility(
+  professionIndex,
+  responsibilityIndex,
+  person,
+  setPerson,
+) {
+  console.log(professionIndex);
+  let newPerson = { ...person };
+  newPerson.professional[professionIndex].responsibilities.splice(
+    responsibilityIndex,
+    1,
+  );
+  setPerson(newPerson);
+}
+
+function deleteExperience(professionalIndex, person, setPerson) {
+  let newPerson = { ...person };
+  newPerson.professional.splice(professionalIndex, 1);
+  setPerson(newPerson);
+}
+
+function addProfession(person, setPerson) {
+  let newPerson = { ...person };
+  newPerson.professional.push({
+    companyName: "",
+    positionHeld: "",
+    startDate: "",
+    endDate: "",
+    responsibilities: [""],
+  });
+  setPerson(newPerson);
+}
+
 export {
   changeArrayObjectValue,
   validityChecker,
   saveInput,
   verifyInputs,
   changeResponsibility,
+  deleteResponsibility,
+  deleteExperience,
+  addProfession,
 };

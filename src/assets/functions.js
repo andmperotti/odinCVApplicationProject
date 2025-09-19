@@ -110,6 +110,29 @@ function addProfession(person, setPerson) {
   setPerson(newPerson);
 }
 
+function addEducation(person, setPerson) {
+  if (person.education.length < 10) {
+    let newPerson = { ...person };
+    newPerson.education.push({
+      institutionName: "",
+      courseTitle: "",
+      startDate: "",
+      endDate: "",
+    });
+    setPerson(newPerson);
+  } else {
+    //tell the user that there are only ten educations allowed
+    let educationLimitError = document.createElement("span");
+    educationLimitError.id = "education-limit-error-message";
+    educationLimitError.textContent =
+      "You cannot have more than ten education objects";
+    document.querySelector("#add-education-button").after(educationLimitError);
+    setTimeout(() => {
+      educationLimitError.remove();
+    }, 5000);
+  }
+}
+
 export {
   changeArrayObjectValue,
   validityChecker,
@@ -119,4 +142,5 @@ export {
   deleteResponsibility,
   deleteExperience,
   addProfession,
+  addEducation,
 };

@@ -12,7 +12,7 @@ function App() {
     location: "",
     title: "",
     description: "",
-    skills: [],
+    skills: [""],
     education: [
       { institutionName: "", courseTitle: "", startDate: "", endDate: "" },
     ],

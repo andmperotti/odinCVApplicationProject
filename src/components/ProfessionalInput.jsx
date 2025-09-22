@@ -5,6 +5,7 @@ import {
   changeResponsibility,
   deleteResponsibility,
   deleteExperience,
+  addResponsibility,
 } from "../assets/functions.js";
 
 function ProfessionalInput({ person, setPerson, index }) {
@@ -184,11 +185,7 @@ function ProfessionalInput({ person, setPerson, index }) {
 
         <button
           className="add-responsibility-button"
-          onClick={() => {
-            let newPerson = { ...person };
-            newPerson.professional[index].responsibilities.push("");
-            setPerson(newPerson);
-          }}
+          onClick={() => addResponsibility(person, setPerson, index)}
           type="button"
         >
           Add Another Responsibility

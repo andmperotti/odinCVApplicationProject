@@ -1,8 +1,15 @@
-import { saveInput, validityChecker, verifyInputs } from "../assets/functions";
+import {
+  saveInput,
+  validityChecker,
+  verifyInputs,
+  addSkill,
+} from "../assets/functions";
+import { GeneralInputSkill } from "./GeneralInputSkills";
+import "../styles/GeneralInput.css";
 
 function GeneralInput({ person, setPerson, setStatus }) {
   return (
-    <form action="">
+    <form action="" id="general-input-form">
       <p>
         <span className="required-asterisk">*</span> Designates a required field
       </p>
@@ -106,8 +113,8 @@ function GeneralInput({ person, setPerson, setStatus }) {
           placeholder="3-5 sentence summary that highlights your most relevant skills, experience, and career goals for the specific job"
         />
       </label>
-      <label id="skills-input-label">
-        Skills:
+      {/* <label id="skills-input-label">
+        Other Skills:
         <input
           type="text"
           id="skills-input"
@@ -117,10 +124,26 @@ function GeneralInput({ person, setPerson, setStatus }) {
           }
           placeholder="Comma space entries; ex: a, b, c"
         />
-      </label>
-
-      {/* button to add SkillInput instance */}
-
+      </label> */}
+      <h2>Other Skills:</h2>
+      {person.skills.length === 0 && <p>No skills have been created</p>}
+      {person.skills.length > 0 &&
+        person.skills.map((skill, index) => (
+          <GeneralInputSkill
+            person={person}
+            setPerson={setPerson}
+            skill={skill}
+            key={index}
+            index={index}
+          />
+        ))}
+      <button
+        type="button"
+        id="add-skill-button"
+        onClick={() => addSkill(person, setPerson)}
+      >
+        Add Another Skill
+      </button>
       <button
         id="submit-general-button"
         onClick={() => verifyInputs("general", setStatus)}

@@ -11,6 +11,7 @@ function changeArrayObjectValue(
   setPerson(newPerson);
 }
 
+//function that displays a custom errorMessage when the user has entered invalid data to that field which is defined by type and or pattern
 function validityChecker(inputElement, errorMessage, errorMessageId) {
   //check if specific error message is active, if so delete
   if (document.querySelector(`#${errorMessageId}`)) {
@@ -29,12 +30,14 @@ function validityChecker(inputElement, errorMessage, errorMessageId) {
   }
 }
 
+//method used to replace simple property value pairs
 function saveInput(event, property, person, setPerson) {
   let newPerson = { ...person };
   newPerson[property] = event.target.value;
   setPerson({ ...newPerson });
 }
 
+//Called on submit button of components, verifies that entry to input elements in a component are valid before changing that component to 'submit' status, else displays an error message below submit button it's called on
 function verifyInputs(section, setStatus) {
   //if submit button error message shown then delete it
   if (document.querySelector(`#${section}-submit-button-error`)) {
@@ -63,6 +66,7 @@ function verifyInputs(section, setStatus) {
   }
 }
 
+//function swaps out saved value for new entry by user
 function changeResponsibility(
   professionIndex,
   responsibilityIndex,
@@ -133,6 +137,30 @@ function addEducation(person, setPerson) {
   }
 }
 
+function addResponsibility(person, setPerson, index) {
+  let newPerson = { ...person };
+  newPerson.professional[index].responsibilities.push("");
+  setPerson(newPerson);
+}
+
+function addSkill(person, setPerson) {
+  let newPerson = { ...person };
+  newPerson.skills.push("");
+  setPerson(newPerson);
+}
+
+function deleteSkill(person, setPerson, index) {
+  let newPerson = { ...person };
+  newPerson.skills.splice(index, 1);
+  setPerson(newPerson);
+}
+
+function changeSkill(person, setPerson, newValue, index) {
+  let newPerson = { ...person };
+  newPerson.skills[index] = newValue;
+  setPerson(newPerson);
+}
+
 export {
   changeArrayObjectValue,
   validityChecker,
@@ -143,4 +171,8 @@ export {
   deleteExperience,
   addProfession,
   addEducation,
+  addSkill,
+  deleteSkill,
+  addResponsibility,
+  changeSkill,
 };

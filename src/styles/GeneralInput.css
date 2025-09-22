@@ -40,3 +40,7 @@
 input[id^="skill-input"] {
   margin: 1ch 0;
 }
+
+#general-input label {
+  display: block;
+}

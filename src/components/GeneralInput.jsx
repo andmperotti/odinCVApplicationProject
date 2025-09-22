@@ -113,18 +113,6 @@ function GeneralInput({ person, setPerson, setStatus }) {
           placeholder="3-5 sentence summary that highlights your most relevant skills, experience, and career goals for the specific job"
         />
       </label>
-      {/* <label id="skills-input-label">
-        Other Skills:
-        <input
-          type="text"
-          id="skills-input"
-          value={person.skills.join(", ")}
-          onChange={(event) =>
-            setPerson({ ...person, skills: event.target.value.split(", ") })
-          }
-          placeholder="Comma space entries; ex: a, b, c"
-        />
-      </label> */}
       <h2>Other Skills:</h2>
       {person.skills.length === 0 && <p>No skills have been created</p>}
       {person.skills.length > 0 &&

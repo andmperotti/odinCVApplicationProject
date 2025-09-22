@@ -3,3 +3,40 @@
   width: fit-content;
   margin-bottom: 1ch;
 }
+
+#general-input textarea {
+  min-width: 250px;
+  min-height: 150px;
+}
+#name-input-label,
+#email-input-label,
+#phone-input-label,
+#location-input-label,
+#professional-title-input-label,
+#description-input-label,
+#skills-input-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1ch;
+  max-width: 400px;
+  justify-content: space-between;
+}
+
+#general-input input {
+  margin-left: 1ch;
+  width: 250px;
+}
+
+#skills-input {
+  margin-right: 1ch;
+}
+
+.required-asterisk {
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+input[id^="skill-input"] {
+  margin: 1ch 0;
+}

@@ -137,7 +137,7 @@ function GeneralInput({ person, setPerson, setStatus }) {
         onClick={() => verifyInputs("general", setStatus)}
         type="button"
       >
-        Submit
+        Submit General
       </button>
     </form>
   );

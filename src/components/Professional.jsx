@@ -38,7 +38,7 @@ export default function Professional({ person, setPerson }) {
             verifyInputs("professional", setStatus);
           }}
         >
-          Submit
+          Submit Professional Experience
         </button>
       </div>
     );

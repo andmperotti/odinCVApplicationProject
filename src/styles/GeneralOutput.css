@@ -1,0 +1,60 @@
+#title {
+  text-align: center;
+}
+
+#general-output {
+  display: grid;
+  text-align: center;
+  border: 1px solid gray;
+  justify-items: center;
+}
+.title-output {
+  font-weight: bold;
+}
+
+.phone-keyword,
+.email-keyword {
+  font-weight: bold;
+}
+
+.description-output-title,
+.skills-output-title {
+  margin-top: 1ch;
+}
+.skills-output-ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1ch;
+  width: 90%;
+  padding: 0;
+}
+
+.skill-li {
+  /* width: fit-content; */
+  border: 0.5px solid black;
+  background-color: lightgray;
+  padding: 0.3ch;
+}
+.edit-button {
+  width: fit-content;
+  text-align: center;
+  justify-self: center;
+}
+.error-message {
+  display: block;
+  color: red;
+}
+.general-description {
+  max-width: 90%;
+}
+/* media query to hide edit buttons when user prints screen */
+@media print {
+  .edit-button {
+    display: none;
+  }
+  #general-output {
+    border: none;
+  }
+}

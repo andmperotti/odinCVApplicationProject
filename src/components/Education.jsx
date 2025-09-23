@@ -37,8 +37,9 @@ export default function Education({ person, setPerson }) {
           id="submit-education-button"
           onClick={() => verifyInputs("education", setStatus)}
         >
-          Submit
+          Submit Education
         </button>
+        <hr className="section-divide"></hr>
       </div>
     );
   } else {

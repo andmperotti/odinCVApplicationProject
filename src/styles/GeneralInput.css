@@ -1,3 +1,7 @@
+#title {
+  text-align: center;
+}
+
 #add-skill-button {
   display: block;
   width: fit-content;
@@ -8,13 +12,12 @@
   min-width: 250px;
   min-height: 150px;
 }
-#name-input-label,
-#email-input-label,
-#phone-input-label,
-#location-input-label,
-#professional-title-input-label,
-#description-input-label,
-#skills-input-label {
+#general-input-form #name-input-label,
+#general-input-form #email-input-label,
+#general-input-form #phone-input-label,
+#general-input-form #location-input-label,
+#general-input-form #professional-title-input-label,
+#general-input-form #description-input-label {
   display: flex;
   align-items: center;
   margin-bottom: 1ch;
@@ -43,4 +46,8 @@ input[id^="skill-input"] {
 
 #general-input label {
   display: block;
+}
+
+#submit-general-button {
+  margin-bottom: 1ch;
 }

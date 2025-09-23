@@ -1,0 +1,46 @@
+#education-edit-button {
+  width: fit-content;
+  justify-self: center;
+}
+/*holds just the name/title of degree/course*/
+.education-title {
+  text-align: left;
+  font-style: italic;
+}
+/*holds institution name and dates*/
+.institution-info {
+  display: flex;
+  justify-content: space-between;
+}
+/*li*/
+.education-item {
+  margin: 1ch 5% 0 5%;
+  width: 90%;
+  display: grid;
+  justify-self: center;
+}
+/*ul*/
+.educations-container {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+#education-output {
+  border: 1px solid gray;
+  display: grid;
+  margin-top: 2ch;
+  text-align: center;
+}
+
+@media print {
+  #education-output {
+    border: none;
+  }
+  #education-edit-button {
+    display: none;
+  }
+  .no-education {
+    display: none;
+  }
+}

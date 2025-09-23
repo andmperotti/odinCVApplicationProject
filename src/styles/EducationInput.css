@@ -24,3 +24,22 @@
 .delete-education-button {
   width: fit-content;
 }
+
+#submit-education-button {
+  margin-bottom: 1ch;
+}
+#education-limit-error-message {
+  display: block;
+  color: red;
+  margin: 1ch 0;
+}
+
+#education-input hr:not(.section-divide) {
+  margin: 1ch 0;
+  max-width: 410px;
+}
+
+#add-education-button {
+  margin-top: 1ch;
+  display: block;
+}

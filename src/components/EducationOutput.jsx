@@ -1,3 +1,4 @@
+import "../styles/EducationOutput.css";
 function EducationOutput({ education, index }) {
   return (
     <section className="education-item" key={index}>
@@ -6,11 +7,10 @@ function EducationOutput({ education, index }) {
         <span className="education-dates-studied">
           <span>
             {education.startDate.split("-")[1]}/
-            {education.startDate.split("-")[2]}/
             {education.startDate.split("-")[0]}{" "}
             <span className="date-to"> to </span>
             {education.endDate
-              ? `${education.endDate.split("-")[1]}/${education.endDate.split("-")[2]}/${education.endDate.split("-")[0]}`
+              ? `${education.endDate.split("-")[1]}/${education.endDate.split("-")[0]}`
               : "Present"}
           </span>
         </span>

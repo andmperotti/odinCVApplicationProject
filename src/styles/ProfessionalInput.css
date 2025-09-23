@@ -32,3 +32,12 @@ section[id^="professional-input"] .add-responsibility-button {
 .professional-input input {
   width: 250px;
 }
+
+#submit-professional-button {
+  display: block;
+  width: fit-content;
+}
+
+#add-professional-button {
+  margin-bottom: 1ch;
+}

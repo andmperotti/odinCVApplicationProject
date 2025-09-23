@@ -28,7 +28,11 @@ export default function Professional({ person, setPerson }) {
           <p>No professional experience objects exist!</p>
         )}
         {/* //add button //submit button} */}
-        <button type="button" onClick={() => addProfession(person, setPerson)}>
+        <button
+          type="button"
+          onClick={() => addProfession(person, setPerson)}
+          id="add-professional-button"
+        >
           Add Another Professional Experience
         </button>
         <button

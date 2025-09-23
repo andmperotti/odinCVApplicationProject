@@ -75,7 +75,7 @@ function EducationInput({ person, setPerson, index }) {
             <span className="required-asterisk">*</span>:
           </span>
           <input
-            type="date"
+            type="month"
             id={`education-start-date-input-${index}`}
             required
             value={person.education[index].startDate}
@@ -100,7 +100,7 @@ function EducationInput({ person, setPerson, index }) {
         <label className="end-date-input-label">
           Date Attended/Studied End: (If attending leave blank)
           <input
-            type="date"
+            type="month"
             value={person.education[index].endDate}
             onChange={(event) =>
               changeArrayObjectValue(

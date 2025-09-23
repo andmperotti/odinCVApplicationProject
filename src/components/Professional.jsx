@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/Professional.css";
 import { verifyInputs, addProfession } from "../assets/functions";
 import { ProfessionalInput } from "./ProfessionalInput";
 import { ProfessionalOutput } from "./ProfessionalOutput";

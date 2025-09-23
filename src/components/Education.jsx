@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/Education.css";
 import { EducationInput } from "./EducationInput";
 import { verifyInputs, addEducation } from "../assets/functions";
 import { EducationOutput } from "./EducationOutput";

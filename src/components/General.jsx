@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/General.css";
 import { GeneralInput } from "./GeneralInput";
 import { GeneralOutput } from "./GeneralOutput";
 

@@ -107,7 +107,7 @@ function addProfession(person, setPerson) {
   newPerson.professional.push({
     companyName: "",
     positionHeld: "",
-    startDate: "",
+    startDate: "2000-01",
     endDate: "",
     responsibilities: [""],
   });
@@ -120,7 +120,7 @@ function addEducation(person, setPerson) {
     newPerson.education.push({
       institutionName: "",
       courseTitle: "",
-      startDate: "",
+      startDate: "2000-01",
       endDate: "",
     });
     setPerson(newPerson);

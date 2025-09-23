@@ -83,7 +83,7 @@ function ProfessionalInput({ person, setPerson, index }) {
             <input
               value={person.professional[index].startDate}
               required
-              type="date"
+              type="month"
               id={`professional-input-start-date-${index}`}
               onChange={(event) => {
                 changeArrayObjectValue(
@@ -111,7 +111,7 @@ function ProfessionalInput({ person, setPerson, index }) {
             End Date:
             <input
               value={person.professional[index].endDate}
-              type="date"
+              type="month"
               id={`professional-input-end-date-${index}`}
               onChange={(event) => {
                 changeArrayObjectValue(

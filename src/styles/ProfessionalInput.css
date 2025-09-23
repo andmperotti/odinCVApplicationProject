@@ -10,6 +10,9 @@ section[id^="professional-input"] .add-responsibility-button {
 .delete-professional-experience-button {
   width: fit-content;
 }
+.add-responsibility-button {
+  margin-bottom: 1ch;
+}
 
 .professional-input {
   margin-bottom: 2ch;

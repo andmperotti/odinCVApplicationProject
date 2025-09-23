@@ -32,7 +32,6 @@
 }
 
 .skill-li {
-  /* width: fit-content; */
   border: 0.5px solid black;
   background-color: lightgray;
   padding: 0.3ch;
@@ -49,6 +48,7 @@
 .general-description {
   max-width: 90%;
 }
+
 /* media query to hide edit buttons when user prints screen */
 @media print {
   .edit-button {

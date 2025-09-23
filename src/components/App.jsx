@@ -14,13 +14,18 @@ function App() {
     description: "",
     skills: [""],
     education: [
-      { institutionName: "", courseTitle: "", startDate: "", endDate: "" },
+      {
+        institutionName: "",
+        courseTitle: "",
+        startDate: "2000-01",
+        endDate: "",
+      },
     ],
     professional: [
       {
         companyName: "",
         positionHeld: "",
-        startDate: "",
+        startDate: "2000-01",
         endDate: "",
         responsibilities: [""],
       },

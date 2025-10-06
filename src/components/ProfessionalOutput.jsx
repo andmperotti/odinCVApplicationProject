@@ -3,7 +3,7 @@ import "../styles/ProfessionalOutput.css";
 export function ProfessionalOutput({ person, index }) {
   return (
     <section id={`professional-output-${index}`} class="professional-item">
-      <section class="professional-name-date-item ">
+      <section className="professional-name-date-item ">
         <h2>{person.professional[index].companyName}</h2>
         <span>
           {person.professional[index].startDate.split("-")[1]}/

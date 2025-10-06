@@ -2,6 +2,7 @@ import "../styles/EducationInput.css";
 import {
   changeArrayObjectValue,
   validityChecker,
+  createNewPerson,
 } from "../assets/functions.js";
 
 function EducationInput({ person, setPerson, index }) {
@@ -119,11 +120,11 @@ function EducationInput({ person, setPerson, index }) {
           className="delete-education-button"
           type="button"
           onClick={() => {
-            let newPerson = { ...person };
+            let newPerson = createNewPerson(person);
             newPerson.education = newPerson.education.filter(
               (education, eduIndex) => eduIndex !== index,
             );
-            setPerson({ ...newPerson });
+            setPerson(newPerson);
           }}
         >
           Delete

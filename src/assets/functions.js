@@ -6,7 +6,7 @@ function changeArrayObjectValue(
   setPerson,
   index,
 ) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson[category][index][property] = value;
   setPerson(newPerson);
 }
@@ -32,7 +32,7 @@ function validityChecker(inputElement, errorMessage, errorMessageId) {
 
 //method used to replace simple property value pairs
 function saveInput(event, property, person, setPerson) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson[property] = event.target.value;
   setPerson({ ...newPerson });
 }
@@ -74,7 +74,7 @@ function changeResponsibility(
   person,
   setPerson,
 ) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.professional[professionIndex].responsibilities[
     responsibilityIndex
   ] = newValue;
@@ -87,8 +87,7 @@ function deleteResponsibility(
   person,
   setPerson,
 ) {
-  console.log(professionIndex);
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.professional[professionIndex].responsibilities.splice(
     responsibilityIndex,
     1,
@@ -97,13 +96,13 @@ function deleteResponsibility(
 }
 
 function deleteExperience(professionalIndex, person, setPerson) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.professional.splice(professionalIndex, 1);
   setPerson(newPerson);
 }
 
 function addProfession(person, setPerson) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.professional.push({
     companyName: "",
     positionHeld: "",
@@ -116,7 +115,7 @@ function addProfession(person, setPerson) {
 
 function addEducation(person, setPerson) {
   if (person.education.length < 10) {
-    let newPerson = { ...person };
+    let newPerson = createNewPerson(person);
     newPerson.education.push({
       institutionName: "",
       courseTitle: "",
@@ -138,27 +137,42 @@ function addEducation(person, setPerson) {
 }
 
 function addResponsibility(person, setPerson, index) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.professional[index].responsibilities.push("");
   setPerson(newPerson);
 }
 
 function addSkill(person, setPerson) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.skills.push("");
   setPerson(newPerson);
 }
 
 function deleteSkill(person, setPerson, index) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.skills.splice(index, 1);
   setPerson(newPerson);
 }
 
 function changeSkill(person, setPerson, newValue, index) {
-  let newPerson = { ...person };
+  let newPerson = createNewPerson(person);
   newPerson.skills[index] = newValue;
   setPerson(newPerson);
+}
+
+function createNewPerson(person) {
+  let newPerson = {
+    ...person,
+    education: [...person.education],
+    professional: [...person.professional],
+  };
+  person.professional.forEach(
+    (_, index) =>
+      (newPerson.professional[index].responsibilities = [
+        ...person.professional[index].responsibilities,
+      ]),
+  );
+  return newPerson;
 }
 
 export {
@@ -175,4 +189,5 @@ export {
   deleteSkill,
   addResponsibility,
   changeSkill,
+  createNewPerson,
 };

@@ -3,6 +3,7 @@ import {
   validityChecker,
   verifyInputs,
   addSkill,
+  createNewPerson,
 } from "../assets/functions";
 import { GeneralInputSkill } from "./GeneralInputSkills";
 import "../styles/GeneralInput.css";
@@ -96,9 +97,11 @@ function GeneralInput({ person, setPerson, setStatus }) {
         <input
           type="text"
           value={person.title}
-          onChange={(event) =>
-            setPerson({ ...person, title: event.target.value })
-          }
+          onChange={(event) => {
+            let newPerson = createNewPerson(person);
+            newPerson.title = event.target.value;
+            setPerson(newPerson);
+          }}
           placeholder="ex: Full Stack Developer"
         />
       </label>
@@ -107,9 +110,11 @@ function GeneralInput({ person, setPerson, setStatus }) {
         <textarea
           type="text"
           value={person.description}
-          onChange={(event) =>
-            setPerson({ ...person, description: event.target.value })
-          }
+          onChange={(event) => {
+            let newPerson = createNewPerson(person);
+            newPerson.description = event.target.value;
+            setPerson(newPerson);
+          }}
           placeholder="3-5 sentence summary that highlights your most relevant skills, experience, and career goals for the specific job"
         />
       </label>
